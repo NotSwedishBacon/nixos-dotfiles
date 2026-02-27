@@ -24,7 +24,7 @@ in
     enable = true;
     shellAliases = {
       btw = "echo i use hyprland btw";
-      nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#hyprland-btw";
+      nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#hp";
       vim = "nvim";
     };
     initExtra = ''
