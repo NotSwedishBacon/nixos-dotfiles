@@ -10,7 +10,7 @@
   };
 
   outputs = { self, nixpkgs, home-manager, ... }: {
-    nixosConfigurations.hyprland-btw = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.hp = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
@@ -19,7 +19,7 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            users.tony = import ./home.nix;
+            users.matt = import ./home.nix;
             backupFileExtension = "backup";
           };
         }
