@@ -9,20 +9,30 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "hyprland-btw";
+  networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 
-  time.timeZone = "America/Los_Angeles";
+  time.timeZone = "Europe/Stockholm";
 
-  services.getty.autologinUser = "tony";
+  i18n.defaultLocale = "en_US.UTF-8";
+  console = {
+    font = "lat9w-16";
+    keyMap = "sv-latin1"; 
+  };
+
+  sevices.pipewire = {
+    enable = true;
+    pulse.enable = true; 
+  };
+
+  services.libinput.enable = true;
 
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
-    withUWSM = true;
   };
 
-  users.users.tony = {
+  users.users.matt = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
     packages = with pkgs; [
@@ -48,7 +58,7 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  system.stateVersion = "25.05";
+  system.stateVersion = "25.11";
 
 }
 
