@@ -17,9 +17,9 @@ in
     ./modules/theme.nix
   ];
 
-  home.username = "tony";
-  home.homeDirectory = "/home/tony";
-  home.stateVersion = "25.05";
+  home.username = "matt";
+  home.homeDirectory = "/home/matt";
+  home.stateVersion = "25.11";
   programs.bash = {
     enable = true;
     shellAliases = {
@@ -30,11 +30,6 @@ in
     initExtra = ''
       export PS1='\[\e[38;5;76m\]\u\[\e[0m\] in \[\e[38;5;32m\]\w\[\e[0m\] \\$ '
       nitch
-    '';
-    profileExtra = ''
-      if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
-          exec uwsm start -S hyprland-uwsm.desktop
-      fi
     '';
   };
 
